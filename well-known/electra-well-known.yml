@@ -1,0 +1,55 @@
+generated: '2026-08-04'
+method: probed
+source: https://www.electra.earth
+host: https://www.electra.earth
+# Every RFC 8615 well-known path below was probed live and MISSED. No document
+# was returned, so there is no WellKnown / SecurityTxt pointer in apis.yml —
+# this file exists only as evidence of the probe, not as a discovery surface.
+documents: []
+probes:
+- path: /.well-known/security.txt
+  status: 404
+  content_type: text/html
+- path: /security.txt
+  status: 404
+  content_type: text/html
+- path: /.well-known/openid-configuration
+  status: 404
+  content_type: text/html
+  note: WordPress 404 template returned, not a discovery document
+- path: /.well-known/oauth-authorization-server
+  status: 404
+  content_type: text/html
+- path: /.well-known/oauth-protected-resource
+  status: 404
+  content_type: text/html
+- path: /.well-known/api-catalog
+  status: 404
+  content_type: text/html
+- path: /.well-known/ai-plugin.json
+  status: 404
+  content_type: text/html
+- path: /.well-known/agent-card.json
+  status: 404
+  content_type: text/html
+- path: /.well-known/agent.json
+  status: 404
+  content_type: text/html
+notes:
+- Electra (Electrasteel, Inc.) is an industrial manufacturer of clean iron. It
+  operates a single WordPress marketing site of nine pages and publishes no
+  developer program, so no /.well-known/ surface is expected or present.
+- The site does publish a robots.txt carrying Cloudflare-managed Content Signals
+  (search=yes, ai-train=no, use=reference) and Disallow rules for Amazonbot,
+  Applebot-Extended, Bytespider, CCBot, ClaudeBot, Google-Extended, GPTBot and
+  meta-externalagent. That is an AI-access posture, not an API discovery
+  document, so it is recorded here rather than wired as a scored pointer.
+x-evidence:
+  fetched: '2026-08-04'
+  robots_txt:
+    url: https://www.electra.earth/robots.txt
+    http_status: 200
+  sitemap:
+    url: https://www.electra.earth/sitemap_index.xml
+    http_status: 200
+    page_count: 9

@@ -1,17 +1,40 @@
 aid: electra
 name: Electra
-description: 'Electra is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Electra (legal name Electrasteel, Inc.) is a Boulder, Colorado clean-industrial
+  company founded in 2020 that is reinventing ironmaking. Instead of smelting iron
+  ore with fossil fuels in a blast furnace, Electra uses an electrochemical process
+  — an acidic leach plus electrowinning driven by renewable electricity — to dissolve
+  a broad range of iron ores, including low-grade and previously uncommercialized
+  ores, and plate out 99% pure iron at roughly 60°C while recovering high-value co-minerals
+  and emitting oxygen. The modular design lets units be added as building blocks for
+  rapid scaling and lets the process follow intermittent renewable power. Electra has
+  raised over $200M from Rio Tinto, BHP Ventures, POSCO, Breakthrough Energy Ventures,
+  Amazon''s Climate Pledge Fund, Capricorn and Lowercarbon Capital, runs a pilot plant
+  in Boulder, and is building a demonstration plant in Colorado. It is an industrial
+  manufacturer with no public developer program: as of this profile it publishes no
+  API, developer portal, documentation, machine-readable specification, or /.well-known
+  discovery surface.'
 url: https://raw.githubusercontent.com/api-evangelist/electra/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
 x-tier: stub
 x-tier-reason: harvest
+image: https://www.electra.earth/wp-content/uploads/2025/02/favicon.png
 specificationVersion: '0.20'
 created: '2026-08-04'
 modified: '2026-08-04'
 tags:
 - Company
+- Clean Energy
+- Climate Tech
+- Industrial
+- Manufacturing
+- Materials
+- Iron
+- Steel
+- Decarbonization
+- Electrochemistry
+- Mining
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +42,62 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/electra-domain-security.yml
 - type: Website
+  url: https://www.electra.earth/
+- type: About
+  url: https://www.electra.earth/our-technology/
+- type: Team
+  url: https://www.electra.earth/our-team/
+- type: Careers
+  url: https://www.electra.earth/careers/
+- type: Newsroom
+  url: https://www.electra.earth/newsroom/
+- type: TermsOfService
+  url: https://www.electra.earth/terms-conditions/
+- type: PrivacyPolicy
+  url: https://www.electra.earth/privacy-policy/
+- type: LinkedIn
+  url: https://www.linkedin.com/company/electra-earth
+- type: Investors
   url: https://forgeglobal.com/electra_stock/
+x-enrichment:
+  date: '2026-08-04'
+  status: minimal
+  artifacts_added: 2
+  pass: local-v1
+x-contract-discovery:
+  date: '2026-08-04'
+  method: probed
+  result: no-machine-readable-contract
+  summary: Electra is an industrial clean-iron manufacturer, not a software provider.
+    Its entire public web surface is a nine-page WordPress marketing site (confirmed
+    against its own Yoast sitemap). No API host, docs host, developer portal, console,
+    GraphQL surface, MCP server or agent card exists to probe.
+  hosts_probed:
+  - www.electra.earth
+  subdomains_probed:
+  - {host: api.electra.earth, resolves: false}
+  - {host: docs.electra.earth, resolves: false}
+  - {host: developer.electra.earth, resolves: false}
+  - {host: developers.electra.earth, resolves: false}
+  - {host: app.electra.earth, resolves: false}
+  - {host: status.electra.earth, resolves: false}
+  - {host: trust.electra.earth, resolves: false}
+  - {host: security.electra.earth, resolves: false}
+  paths_probed:
+  - {path: /openapi.json, status: 404}
+  - {path: /openapi.yaml, status: 404}
+  - {path: /swagger.json, status: 404}
+  - {path: /api-docs, status: 404}
+  - {path: /graphql, status: 404}
+  - {path: /llms.txt, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+  - {path: /robots.txt, status: 200}
+  - {path: /sitemap_index.xml, status: 200}
+  disambiguation: Not to be confused with the several unrelated "Electra" API providers
+    — Electra Systems (docs.electra.systems, energy/IoT device management), Electra
+    Information Systems (financial reconciliation), Electra Coin (ECA cryptocurrency),
+    or Google's ELECTRA NLP model. None of those are Electrasteel, Inc.

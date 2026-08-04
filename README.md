@@ -42,5 +42,42 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Electra is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://forgeglobal.com/electra_stock/
+Electra (legal name **Electrasteel, Inc.**) is a Boulder, Colorado clean-industrial company founded in
+2020 that is reinventing ironmaking. Instead of smelting iron ore with fossil fuels in a blast furnace,
+Electra uses an electrochemical process — an acidic leach plus electrowinning driven by renewable
+electricity — to dissolve a broad range of iron ores, including low-grade and previously
+uncommercialized ores, and plate out 99% pure iron at roughly 60°C while recovering high-value
+co-minerals and emitting oxygen. Electra has raised over $200M from Rio Tinto, BHP Ventures, POSCO,
+Breakthrough Energy Ventures, Amazon's Climate Pledge Fund, Capricorn and Lowercarbon Capital, runs a
+pilot plant in Boulder, and is building a demonstration plant in Colorado.
+
+## API surface
+
+**Electra publishes no public API.** It is an industrial manufacturer, not a software provider. Its
+entire public web surface is a nine-page marketing site (verified against its own sitemap): homepage,
+technology, team, careers, newsroom, privacy policy, terms & conditions, and purchase-order terms.
+There is no developer portal, documentation, API reference, machine-readable specification, GraphQL
+endpoint, MCP server, or agent card, and no `api.`/`docs.`/`developer.` subdomain resolves. The probes
+run and their HTTP statuses are recorded in `apis.yml` under `x-contract-discovery` and in
+`well-known/electra-well-known.yml`. This is a valid, expected result — not a gap.
+
+Not to be confused with the unrelated **Electra Systems** (energy/IoT device API), **Electra
+Information Systems** (financial reconciliation), **Electra Coin** (ECA), or Google's **ELECTRA** NLP
+model.
+
+## Artifacts
+
+| Artifact | File | Method |
+|---|---|---|
+| Domain security | `security/electra-domain-security.yml` | probed |
+| Well-known probe evidence | `well-known/electra-well-known.yml` | probed (all paths 404) |
+
+## Links
+
+- Website — https://www.electra.earth/
+- Technology — https://www.electra.earth/our-technology/
+- Team — https://www.electra.earth/our-team/
+- Careers — https://www.electra.earth/careers/
+- Newsroom — https://www.electra.earth/newsroom/
+- LinkedIn — https://www.linkedin.com/company/electra-earth
+- Secondary-market listing — https://forgeglobal.com/electra_stock/
